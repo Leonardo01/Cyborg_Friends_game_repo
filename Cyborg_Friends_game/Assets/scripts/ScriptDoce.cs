@@ -20,6 +20,7 @@ public class ScriptDoce : MonoBehaviour
 
          if(obj_col_doce.gameObject.tag == "Player"){
             
+            // incrementar escore
             Destroy(gameObject);
 
          }
