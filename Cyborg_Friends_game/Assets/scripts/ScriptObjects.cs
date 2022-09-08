@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScriptDoce : MonoBehaviour
+public class ScriptObjects : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,15 +16,17 @@ public class ScriptDoce : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D obj_col_doce){
+    void OnTriggerEnter2D(Collider2D obj_col){
 
-         if(obj_col_doce.gameObject.tag == "Player"){
+         if(obj_col.gameObject.tag == "Player"){
             
             // incrementar escore
             Destroy(gameObject);
 
+         }else if(obj_col.gameObject.tag == "Boundary"){
+            // decrese lifes
+            Destroy(gameObject);
          }
     }
 
-    
 }
