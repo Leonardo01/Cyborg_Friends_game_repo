@@ -24,7 +24,9 @@ public class PlayerMovement : MonoBehaviour
     void PlayerMove(){
 
         float xpos = Input.GetAxis("Horizontal");
-        transform.position += Vector3.right * xpos * speed * Time.deltaTime; 
+        transform.position += Vector3.right * xpos * speed * Time.deltaTime;
+
+
 
     }
 }
