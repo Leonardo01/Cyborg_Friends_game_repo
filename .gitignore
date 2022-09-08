@@ -58,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Cyborg_Friends_game/Library/
+Cyborg_Friends_game/Logs/
+Cyborg_Friends_game/Temp/
