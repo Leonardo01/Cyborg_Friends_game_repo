@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    bool canmove = true;
+    public bool canmove = true;
     [SerializeField] float speed;
     [SerializeField] float maxpos;
     // Start is called before the first frame update

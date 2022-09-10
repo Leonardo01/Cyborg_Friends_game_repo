@@ -9,5 +9,9 @@ public class MenuControl : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
+    public void menu(){
+        SceneManager.LoadScene("Menu");
+    }
+
     
 }

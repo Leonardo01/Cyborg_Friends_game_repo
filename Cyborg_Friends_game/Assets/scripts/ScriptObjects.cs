@@ -20,11 +20,12 @@ public class ScriptObjects : MonoBehaviour
 
          if(obj_col.gameObject.tag == "Player"){
             
-            // incrementar escore
+            
+            GameManager.instance.incrementarScore();
             Destroy(gameObject);
 
          }else if(obj_col.gameObject.tag == "Boundary"){
-            // decrese lifes
+            GameManager.instance.decrementlifes();
             Destroy(gameObject);
          }
     }

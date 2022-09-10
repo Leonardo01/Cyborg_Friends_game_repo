@@ -5,6 +5,13 @@ using UnityEngine;
 public class SpawnObjects : MonoBehaviour
 {
 
+    public static SpawnObjects instance;
+
+    private void Awake(){
+        if(instance == null){
+            instance = this;
+        }
+    }
     [SerializeField] GameObject [] objetos;
     [SerializeField] float ObjMaxpos;
     public float SpawnInterval;
@@ -35,7 +42,7 @@ public class SpawnObjects : MonoBehaviour
 
     IEnumerator StartSpawn(){
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         while(true){
             yield return new WaitForSeconds(SpawnInterval);
