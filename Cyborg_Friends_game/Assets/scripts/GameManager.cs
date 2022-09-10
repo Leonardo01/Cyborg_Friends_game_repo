@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,10 +13,12 @@ public class GameManager : MonoBehaviour
        instance = this;
     }
 
-    int Score;
+    int Score = 0;
     int lifes = 3;
+    bool GameOver = false;
     public GameObject player;
     public GameObject GameOverPanel;
+    public Text ScoreText;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +32,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void incrementarScore(){
+        if(!GameOver){
         Score ++;
-        print("Pontos: " + Score.ToString() );
+        ScoreText.text = Score.ToString();
+        }
     }
 
     public void decrementlifes(){
@@ -40,11 +45,12 @@ public class GameManager : MonoBehaviour
             lifes--;
             print("Vidas: " + lifes);
         }else if(lifes == 0){
-           Gameover();
+           Gameoverf();
         }
     }
 
-    public void Gameover(){
+    public void Gameoverf(){
+        GameOver = true;
         GameOverPanel.SetActive(true);
         SpawnObjects.instance.SpawnInterval = 0;
         GameObject.Find("Player").GetComponent<PlayerMovement>().canmove = false;
