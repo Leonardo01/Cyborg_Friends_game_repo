@@ -242,6 +242,7 @@ MonoBehaviour:
   - {fileID: 7865495259843316335, guid: 8b38b52ef4e13ba4e90411e73c0d84b0, type: 3}
   - {fileID: 4755868817159499493, guid: cdc8b19f3df2c694387cc0a54d8e8191, type: 3}
   ObjMaxpos: 7.04
+  SpawnInterval: 1
 --- !u!4 &936174195
 Transform:
   m_ObjectHideFlags: 0

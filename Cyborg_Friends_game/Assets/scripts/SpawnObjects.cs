@@ -7,11 +7,13 @@ public class SpawnObjects : MonoBehaviour
 
     [SerializeField] GameObject [] objetos;
     [SerializeField] float ObjMaxpos;
+    public float SpawnInterval;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("spawnobjetos",1,1);
-        // trocar por coroutine
+        //InvokeRepeating("spawnobjetos",1,1);
+
+        Startcospawn();
     }
 
     // Update is called once per frame
@@ -30,4 +32,23 @@ public class SpawnObjects : MonoBehaviour
 
         Instantiate(objetos[randomnumber],randomspawn,transform.rotation);
     }
+
+    IEnumerator StartSpawn(){
+
+        yield return new WaitForSeconds(2f);
+
+        while(true){
+            yield return new WaitForSeconds(SpawnInterval);
+            spawnobjetos();
+        }
+    }
+
+    public void Startcospawn(){
+        StartCoroutine("StartSpawn");
+    }
+
+    public void stopcospawn(){
+        StopCoroutine("StartSpawn");
+    }
+    
 }
