@@ -20,7 +20,7 @@ public class Lifescript : MonoBehaviour
 
          if(obj_col.gameObject.tag == "Player"){// preciso terminar aqui.... 
 
-               //GameManager.instance.GiveLife();
+               GameManager.instance.GiveLife();
                Destroy(gameObject);               
 
              }else if(obj_col.gameObject.tag == "Boundary"){

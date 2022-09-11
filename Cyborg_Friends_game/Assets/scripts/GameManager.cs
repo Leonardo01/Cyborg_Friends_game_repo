@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     //        print(lifes);
+
     }
 
     public void incrementarScore(){
@@ -57,11 +57,11 @@ public class GameManager : MonoBehaviour
         GameObject.Find("Player").GetComponent<PlayerMovement>().canmove = false;
     }
 
-    public void GiveLife(){ // preciso terminar aqui.... 
-        if(lifes < 2){
+    public void GiveLife(){ 
+        if(lifes <= 2 && !(GameOver)){
 
         lifes += 1;  
-        LifePanel.transform.GetChild(lifes).gameObject.SetActive(true);
+        LifePanel.transform.GetChild(lifes -1).gameObject.SetActive(true);
    
         }      
 

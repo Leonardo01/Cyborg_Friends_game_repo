@@ -33,6 +33,11 @@ public class SpawnObjects : MonoBehaviour
 
         int randomnumber = Random.Range(0,objetos.Length);
 
+
+         if(randomnumber == 4){// Aqui aumento a dificuldade para o spawn de vidas elas ficam mais raras
+            randomnumber = Random.Range(0,objetos.Length);
+         }
+
         float randompos = Random.Range(-ObjMaxpos,ObjMaxpos);
 
         Vector3 randomspawn = new Vector3(randompos,transform.position.y,transform.position.z);
