@@ -19,10 +19,8 @@ public class ScriptObjects : MonoBehaviour
     void OnTriggerEnter2D(Collider2D obj_col){
 
          if(obj_col.gameObject.tag == "Player"){
-            
-            
-            GameManager.instance.incrementarScore();
-            Destroy(gameObject);
+               GameManager.instance.incrementarScore();
+               Destroy(gameObject);
 
          }else if(obj_col.gameObject.tag == "Boundary"){
             GameManager.instance.decrementlifes();

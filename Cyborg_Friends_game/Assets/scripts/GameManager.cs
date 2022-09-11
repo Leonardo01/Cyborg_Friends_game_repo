@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     bool GameOver = false;
     public GameObject player;
     public GameObject GameOverPanel;
+    public GameObject LifePanel;
     public Text ScoreText;
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+     //        print(lifes);
     }
 
     public void incrementarScore(){
@@ -43,7 +44,7 @@ public class GameManager : MonoBehaviour
         if(lifes > 0){
 
             lifes--;
-            print("Vidas: " + lifes);
+            LifePanel.transform.GetChild(lifes).gameObject.SetActive(false);
         }else if(lifes == 0){
            Gameoverf();
         }
@@ -56,4 +57,13 @@ public class GameManager : MonoBehaviour
         GameObject.Find("Player").GetComponent<PlayerMovement>().canmove = false;
     }
 
+    public void GiveLife(){ // preciso terminar aqui.... 
+        if(lifes < 2){
+
+        lifes += 1;  
+        LifePanel.transform.GetChild(lifes).gameObject.SetActive(true);
+   
+        }      
+
+    }
 }
