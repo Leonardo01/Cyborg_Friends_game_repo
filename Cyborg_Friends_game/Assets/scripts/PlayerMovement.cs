@@ -27,6 +27,12 @@ public class PlayerMovement : MonoBehaviour
         float xinputpos = Input.GetAxis("Horizontal");
         transform.position += Vector3.right * xinputpos * speed * Time.deltaTime;
 
+        // Outras formas para mover o player
+        
+
+       //transform.Translate(xinputpos,0,0);
+       // transform.position += new Vector3(xinputpos,0,0);
+
         float xpos = Mathf.Clamp(transform.position.x,-maxpos,maxpos);
 
         transform.position = new Vector3(xpos,transform.position.y,transform.position.z);
